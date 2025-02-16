@@ -1,5 +1,5 @@
 package com.example.myapp;
-
+import android.widget.Toast;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +19,8 @@ public class WelcomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
+
+        Toast.makeText(this,"Login Successful!",Toast.LENGTH_SHORT).show();
 
         TextView tvWelcome = findViewById(R.id.tvWelcome);
         Button btnLogout = findViewById(R.id.btnLogout);
