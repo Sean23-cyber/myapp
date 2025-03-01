@@ -49,6 +49,7 @@ public class WelcomeActivity extends AppCompatActivity {
                 mGoogleSignInClient.signOut().addOnCompleteListener(task -> { // Sign out from Google
                     Intent intent = new Intent(WelcomeActivity.this, MainActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    Toast.makeText(WelcomeActivity.this,"Logout Successful",Toast.LENGTH_SHORT).show();
                     startActivity(intent);
                     finish();
                 });

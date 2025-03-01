@@ -1,26 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    android:gravity="center"
-    android:orientation="vertical"
     android:padding="20dp">
 
-    <TextView
-        android:id="@+id/tvWelcome"
+    <!-- App Title with Logo -->
+    <LinearLayout
+        android:id="@+id/llTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
 
-        android:text="Welcome!"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/black"/>
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/tvWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Surprise"
+            android:textColor="@android:color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <!-- Navigation Bar with 3 Bars Logo and Logout Button -->
+    <LinearLayout
+        android:id="@+id/llNavBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/llTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+        <ImageView
+            android:id="@+id/ivNavBarLogo"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/menu" />
+
+
+    </LinearLayout>
+
+    <!-- Join Test Button -->
+    <Button
+        android:id="@+id/btnJoinTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Join Test"
+        app:layout_constraintTop_toBottomOf="@id/llNavBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnStartTest"
+        android:layout_marginTop="100dp" />
+
+    <!-- Start Test Button -->
+    <Button
+        android:id="@+id/btnStartTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Test"
+        app:layout_constraintTop_toBottomOf="@id/btnJoinTest"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp" />
 
     <Button
         android:id="@+id/btnLogout"
+        android:layout_marginBottom="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="start"
         android:text="Logout"
-        android:layout_marginTop="20dp"/>
-</LinearLayout>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
